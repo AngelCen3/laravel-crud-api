@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+/*Crearemos variables para los colores que usemos*/
+:root{
+    --color-barra-lateral:rgb(255,255,255);
+    --color-texto:rgb(0,0,0);
+    --color-texto-menu:rgb(134,136,144);
+    --color-menu-hover:rgb(238,238,238);
+    --color-menu-hover-texto: rgb(0,0,0);
+    --color-boton:rgb(0,0,0);
+    --color-boton-texto:rgb(255,255,255);
+    --color-linea:rgb(241, 241, 241);
+}
+*{  /*Usando el selector universal haremos que todos los elementos */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*Modelo de caja que toma en cuenta el width,padding, border*/
+    font-family: 'Outfit', sans-serif;
+}
+body{
+    /*border: 5px solid red;*/
+    height: 100vh;
+    width: 100%;
+    background-color: darkcyan;
+}
+.barra-lateral{
+   /* border: 2px solid chartreuse;*/
+    width: 250px; /*Ancho*/
+    height: 100%;
+    overflow: hidden; /*Esto lo agragamos para ocultal lo que sobresale al hacer mas pequeña la barra lateral*/
+    padding: 20px 15px;
+    background-color: var(--color-barra-lateral);
+    transition: width 0.5s ease; /*Agragamos una transicion para que se oculte con mas suavidad la barra lateral*/
+}
+.mini-barra-lateral{
+    width: 80px;
+}
+.barra-lateral  span{  /*Esta propiedad afectara a todos los span dentro de barra-lateral*/
+   /* border: 2px solid red;*/
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease; /*Tambien agregamos una animacion al ancho de los span*/
+ }
+.barra-lateral span.oculto{
+    opacity: 0;
+    width: 0;/*Al ocultar la barra lateral el icono (+)se sale del contenedor, estonces agragamos esto para solucionarlo*/
+}
+/*-----> Nombre de la pagina*/
+.barra-lateral .nombre-pagina{
+   /* border: 2px solid red;*/
+    width: 100%; /*Recuerda que esto se adapta a su contenedor que en este caso es .barra-lateral*/
+    height: 45px;
+    margin-bottom: 40px;
+    display: flex; /*Esto hace que */
+    align-items: center; /*Centramos sus elementos horizontalmente*/
+}
+.barra-lateral .nombre-pagina ion-icon{
+    border: 2px solid slateblue;
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.barra-lateral .nombre-pagina span{
+    margin-left: 5px;
+    font-size: 25px;
+}
+.barra-lateral .boton{
+    width: 100%;
+    height: 45px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    border-radius: 10px;
+    background-color: #5dbea3;
+    color: aliceblue;
+    margin-bottom: 30px; /*Esto lo agregue yo, pero luego en el video mas adelante lo agragaban de todos modos*/
+}
+.barra-lateral .boton ion-icon{
+    border: 2px solid red;
+    min-width: 50px;/* width: 50px; */
+    font-size: 25px;
+}
+/*------->Menu Navegacion*/
+.barra-lateral .navegacion li{
+   /* border: 2px solid grey;*/
+    list-style: none;/*Para quitarle los bullets a las etiquetas - li*/
+    display: flex;
+    margin-bottom: 5px;
+}
+.barra-lateral .navegacion a {
+   /*border: 2px solid black;*/
+   width: 100%; /*Ancho*/
+   height: 45px;
+   display: flex;
+   align-items: center;
+   text-decoration: none; /*Para quitarle el subrallado a las etiquetas - a*/
+   border-radius: 10px;
+   background-color: var(--color-barra-lateral);
+   color: var(--color-texto-menu);
+}
+.barra-lateral .navegacion a:hover {
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+.barra-lateral .navegacion ion-icon {
+    /*border: 2px solid yellow;*/
+    min-width: 50px; /*Para que quede centrado a la hora de minimizar la barra-lateral*/
+    font-size: 20px;
+}
+/*---->Linea*/
+.barra-lateral .linea {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-linea)
+}
+.barra-lateral .modo-oscuro {
+    border: 2px solid black;
+    width: 100%;
+    border-radius: 10px;
+}
+.barra-lateral .modo-oscuro .info {
+    border: 2px solid red;
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;/*Centramos sus elementos verticalmente*/
+
+}
